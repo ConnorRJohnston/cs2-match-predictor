@@ -5,7 +5,12 @@ from .data import load_matches
 
 def cli():
     parser = argparse.ArgumentParser(description="Predict CS2 match outcomes using Elo ratings")
-    parser.add_argument("dataset", help="Path to CSV dataset of past matches")
+    parser.add_argument(
+        "dataset",
+        nargs="?",
+        default="data/csgoresults.csv",
+        help="Path to CSV dataset of past matches",
+    )
     parser.add_argument("team1", help="Name of the first team")
     parser.add_argument("team2", help="Name of the second team")
     args = parser.parse_args()

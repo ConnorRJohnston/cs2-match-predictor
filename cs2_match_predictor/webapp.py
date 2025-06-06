@@ -53,7 +53,12 @@ if __name__ == '__main__':
     import argparse
 
     parser = argparse.ArgumentParser(description='Run the CS2 Match Predictor web front end')
-    parser.add_argument('dataset', nargs='?', default='sample_matches.csv', help='CSV dataset file')
+    parser.add_argument(
+        'dataset',
+        nargs='?',
+        default='data/csgoresults.csv',
+        help='CSV dataset file'
+    )
     parser.add_argument('--host', default='127.0.0.1', help='Host to bind')
     parser.add_argument('--port', type=int, default=5000, help='Port to bind')
     args = parser.parse_args()
