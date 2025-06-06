@@ -8,8 +8,13 @@ This repository contains a simple command line application for predicting Counte
 
 ## Usage
 
-1. Install dependencies (none besides Python standard library).
-2. Run the predictor with the provided sample dataset:
+1. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+2. Run the command-line predictor with the provided sample dataset:
 
 ```bash
 python -m cs2_match_predictor.main sample_matches.csv FaZe G2
@@ -24,3 +29,13 @@ team1,team2,team1_score,team2_score
 ```
 
 Update the dataset with recent matches to improve predictions.
+
+## Web Front End
+
+You can also run a simple web interface:
+
+```bash
+python -m cs2_match_predictor.webapp sample_matches.csv
+```
+
+Visit `http://127.0.0.1:5000` in your browser to select two teams and view the predicted win probability.
