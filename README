@@ -1,1 +1,43 @@
+# CS2 Match Predictor
 
+This repository contains a simple command line application for predicting Counter-Strike 2 match outcomes using an Elo rating system.
+
+## Requirements
+
+- Python 3.8+
+
+## Usage
+
+1. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+2. Run the command-line predictor using the included dataset of real match results:
+
+```bash
+python -m cs2_match_predictor.main FaZe G2
+```
+
+The script will output the probability of the first team beating the second team based on Elo ratings calculated from `data/csgoresults.csv`.
+
+The file `data/csgoresults.csv` contains thousands of real CS2 match results and was downloaded from the [csgo-dataset](https://github.com/hojlund123/csgo-dataset) project.
+
+You can also provide your own CSV file with the columns:
+
+```
+team1,team2,team1_score,team2_score
+```
+
+Update the dataset with recent matches to improve predictions.
+
+## Web Front End
+
+You can also run a simple web interface:
+
+```bash
+python -m cs2_match_predictor.webapp
+```
+
+Visit `http://127.0.0.1:5000` in your browser to select two teams and view the predicted win probability based on the real match data.
